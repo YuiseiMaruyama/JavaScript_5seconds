@@ -1,0 +1,33 @@
+.container{
+    font-family: 'Courier New', sans-serif;
+    width: 300px;
+    margin: 30px auto 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#target, #result{
+    font-size: 32px;
+    margin-bottom: 15px;
+    background: #ccc;
+    height: 60px;
+    /* 文字を上下中央に揃えるために行の高さを指定する*/
+    line-height: 60px;
+}
+#start{
+    /* 要素を左に配置 */
+    float: left;
+}
+#stop{
+    /* 要素を右に配置 */
+    float: right;
+}
+#start,#stop{
+    cursor: pointer;
+    font-size: 18px;
+    width: 145px;
+    background: #eee;
+    height:40px;
+    line-height: 40px;
+    box-shadow: 0 6px 0 #ccc;
+}
