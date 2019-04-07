@@ -8,6 +8,9 @@
 
     start.addEventListener('click', function(){
         startTime = Date.now();
+        this.className = 'pushed';
+        //stopのclassNameからpushedを外すため
+        stop.className = '';
     });
     stop.addEventListener('click', function(){
         var elapseTime ;
@@ -16,6 +19,8 @@
         elapseTime = (Date.now() - startTime) / 1000;
         //toFixed()で小数点以下を指定
         result.textContent = elapseTime.toFixed(3);
+        this.className = 'pushed';
+        start.className = '';
         diff = elapseTime - 5.0;
 
         // if(diff > -1.0 && diff < 1.0){
