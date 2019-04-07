@@ -11,12 +11,18 @@
     });
     stop.addEventListener('click', function(){
         var elapseTime ;
+        var diff;
         // ミリ秒->秒に変換
         elapseTime = (Date.now() - startTime) / 1000;
-        // elapseTime = 4;
-
         //toFixed()で小数点以下を指定
         result.textContent = elapseTime.toFixed(3);
+        diff = elapseTime - 5.0;
+
+        // if(diff > -1.0 && diff < 1.0){
+        // Math.abs()で絶対値を取得
+            if(Math.abs(diff) < 1.0){
+                result.className = 'perfect';
+        }
 
     });
 })();

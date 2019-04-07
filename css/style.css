@@ -31,3 +31,7 @@
     line-height: 40px;
     box-shadow: 0 6px 0 #ccc;
 }
+#result.perfect{
+    background: #FA5858;
+    color: #fff;
+}
