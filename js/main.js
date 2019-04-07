@@ -9,6 +9,7 @@
     let isStarted = false;
 
     start.addEventListener('click', function(){
+        //ゲームが開始された後にstartの処理がされないように条件分岐
         if(isStarted === true){
             return;
         }
@@ -17,6 +18,8 @@
         this.className = 'pushed';
         //stopのclassNameからpushedを外すため
         stop.className = '';
+        result.textContent = '0.000';
+        result.className = 'standby';
     });
     stop.addEventListener('click', function(){
         let elapseTime ;
@@ -31,6 +34,7 @@
         result.textContent = elapseTime.toFixed(3);
         this.className = 'pushed';
         start.className = '';
+        result.className = '';
         diff = elapseTime - 5.0;
 
         // if(diff > -1.0 && diff < 1.0){
