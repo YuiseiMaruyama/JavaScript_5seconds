@@ -1,20 +1,30 @@
 (function (){
     'use strict';
 
-    var start = document.getElementById('start');
-    var stop = document.getElementById('stop');
-    var result = document.getElementById('result');
-    var startTime;
+    let start = document.getElementById('start');
+    let stop = document.getElementById('stop');
+    let result = document.getElementById('result');
+    let startTime;
+    //isStartedはゲームが始まっているかを判断する変数
+    let isStarted = false;
 
     start.addEventListener('click', function(){
+        if(isStarted === true){
+            return;
+        }
+        isStarted = true;
         startTime = Date.now();
         this.className = 'pushed';
         //stopのclassNameからpushedを外すため
         stop.className = '';
     });
     stop.addEventListener('click', function(){
-        var elapseTime ;
-        var diff;
+        let elapseTime ;
+        let diff;
+        if(isStarted === false){
+            return;
+        }
+        isStarted = false;
         // ミリ秒->秒に変換
         elapseTime = (Date.now() - startTime) / 1000;
         //toFixed()で小数点以下を指定
